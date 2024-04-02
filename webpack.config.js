@@ -1,7 +1,6 @@
 const { join } = require("path");
 const SizePlugin = require("size-plugin");
-const BundleAnalyzerPlugin =
-  require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
+const webpack = require("webpack");
 
 /** @type {import('webpack').Configuration} */
 module.exports = {
@@ -53,9 +52,8 @@ module.exports = {
   },
   plugins: [
     new SizePlugin(),
-    new BundleAnalyzerPlugin({
-      analyzerMode: "static",
-      openAnalyzer: false,
+    new webpack.ProvidePlugin({
+      process: require.resolve("process/browser"),
     }),
   ],
 };
