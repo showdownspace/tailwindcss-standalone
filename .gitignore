@@ -1,3 +1,4 @@
 /dist
 node_modules
 size-plugin.json
+.DS_Store

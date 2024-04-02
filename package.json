@@ -9,7 +9,8 @@
   "license": "MIT",
   "scripts": {
     "test": "yarn build",
-    "build": "rm -rf dist && yarn webpack --mode development"
+    "build": "rm -rf dist && yarn webpack --mode production",
+    "dev": "yarn webpack --mode development --watch"
   },
   "devDependencies": {
     "assert": "^2.1.0",
